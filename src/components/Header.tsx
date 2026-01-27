@@ -1,6 +1,7 @@
-import { GraduationCap, BookOpen, Award, User } from "lucide-react";
+import { GraduationCap, BookOpen, Award, User, ShoppingCart, Bell } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
+import AnimatedLogo from "./AnimatedLogo";
 
 const Header = () => {
   const location = useLocation();
@@ -11,10 +12,10 @@ const Header = () => {
     <header className="sticky top-0 z-50 w-full border-b border-border bg-card/80 backdrop-blur-md">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link to="/" className="flex items-center gap-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
-            <GraduationCap className="h-6 w-6 text-primary-foreground" />
+          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
+            <GraduationCap className="h-5 w-5 text-primary-foreground" />
           </div>
-          <span className="text-xl font-bold text-foreground">Lumina</span>
+          <AnimatedLogo />
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex">
@@ -48,6 +49,18 @@ const Header = () => {
         </nav>
 
         <div className="flex items-center gap-2">
+          <Button variant="ghost" size="icon" className="relative">
+            <ShoppingCart className="h-5 w-5" />
+            <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] font-medium text-primary-foreground">
+              2
+            </span>
+          </Button>
+          <Button variant="ghost" size="icon" className="relative">
+            <Bell className="h-5 w-5" />
+            <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-destructive text-[10px] font-medium text-destructive-foreground">
+              3
+            </span>
+          </Button>
           <Button variant="outline" size="sm">
             Sign In
           </Button>
