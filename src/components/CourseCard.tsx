@@ -23,7 +23,7 @@ const CourseCard = ({ course }: CourseCardProps) => {
         <img
           src={course.image}
           alt={course.title}
-          className="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+          className="h-36 w-full object-cover transition-transform duration-300 group-hover:scale-105"
         />
         <div className="absolute left-3 top-3">
           <Badge variant="outline" className={levelColors[course.level]}>
@@ -35,11 +35,11 @@ const CourseCard = ({ course }: CourseCardProps) => {
         </div>
       </div>
 
-      <CardContent className="p-5">
-        <h3 className="mb-2 line-clamp-2 text-lg font-semibold text-foreground transition-colors group-hover:text-primary">
+      <CardContent className="p-4">
+        <h3 className="mb-1 line-clamp-2 text-base font-semibold text-foreground transition-colors group-hover:text-primary">
           {course.title}
         </h3>
-        <p className="mb-4 line-clamp-2 text-sm text-muted-foreground">
+        <p className="mb-3 line-clamp-2 text-xs text-muted-foreground">
           {course.description}
         </p>
 
@@ -72,9 +72,9 @@ const CourseCard = ({ course }: CourseCardProps) => {
         )}
       </CardContent>
 
-      <CardFooter className="border-t border-border p-5 pt-4">
+      <CardFooter className="border-t border-border p-4 pt-3">
         <Link to={`/course/${course.id}`} className="w-full">
-          <Button className="w-full" variant={course.enrolled ? "secondary" : "default"}>
+          <Button className="w-full" size="sm" variant={course.enrolled ? "secondary" : "default"}>
             {course.enrolled
               ? course.progress === 100
                 ? "View Certificate"
