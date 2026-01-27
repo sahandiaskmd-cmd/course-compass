@@ -14,7 +14,7 @@ const Header = () => {
           <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
             <GraduationCap className="h-6 w-6 text-primary-foreground" />
           </div>
-          <span className="text-xl font-bold text-foreground">LearnHub</span>
+          <span className="text-xl font-bold text-foreground">Lumina</span>
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex">
